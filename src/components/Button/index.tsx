@@ -1,31 +1,31 @@
-import styles from "./styles.module.scss";
-import clsx from "clsx";
+import styles from './styles.module.scss';
+import clsx from 'clsx';
 
-interface ComponentProps extends React.ComponentProps<"button"> {
+interface ComponentProps extends React.ComponentProps<'button'> {
   // core props
   disabled?: boolean;
-  type?: "button" | "submit" | "reset";
+  type?: 'button' | 'submit' | 'reset';
   formId?: string;
   loading?: boolean;
   onClick?: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
   title: string;
   // variants
-  variant?: "solid" | "outline" | "ghost";
-  color?: "primary" | "secondary" | "success" | "danger";
-  borderRadius?: "none" | "small" | "medium" | "full";
-  size?: "xs" | "sm" | "md" | "lg" | "xl";
+  variant?: 'solid' | 'outline' | 'ghost';
+  color?: 'primary' | 'secondary' | 'success' | 'danger';
+  borderRadius?: 'none' | 'small' | 'medium' | 'full';
+  size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
   fullWidth?: boolean;
 }
 
-export function Button({
-  variant = "solid",
-  size = "md",
+export const Button = ({
+  variant = 'solid',
+  size = 'md',
   title,
   onClick,
   disabled,
   borderRadius,
-  color = "primary",
-}: ComponentProps) {
+  color = 'primary',
+}: ComponentProps) => {
   const style = clsx(styles.button, {
     [styles[`${variant}`]]: variant,
     [styles[`size-${size}`]]: size,
@@ -35,8 +35,13 @@ export function Button({
   });
 
   return (
-    <button type="button" className={style} onClick={onClick} disabled>
+    <button
+      type="button"
+      className={style}
+      onClick={onClick}
+      disabled={disabled}
+    >
       {title}
     </button>
   );
-}
+};

@@ -1,13 +1,13 @@
-import { Button } from "./main";
+import { Button } from './main';
 
 function App() {
   return (
     <section>
       <div
         style={{
-          display: "flex",
-          gap: "10px",
-          marginBottom: "20px",
+          display: 'flex',
+          gap: '10px',
+          marginBottom: '20px',
         }}
       >
         <Button title="Hello world" color="danger" />
@@ -15,9 +15,9 @@ function App() {
       </div>
       <div
         style={{
-          display: "flex",
-          gap: "10px",
-          marginBottom: "20px",
+          display: 'flex',
+          gap: '10px',
+          marginBottom: '20px',
         }}
       >
         <Button title="Hello world" variant="outline" />
@@ -25,9 +25,9 @@ function App() {
       </div>
       <div
         style={{
-          display: "flex",
-          gap: "10px",
-          marginBottom: "20px",
+          display: 'flex',
+          gap: '10px',
+          marginBottom: '20px',
         }}
       >
         <Button title="Hello world" variant="ghost" />
@@ -35,9 +35,9 @@ function App() {
       </div>
       <div
         style={{
-          display: "flex",
-          gap: "10px",
-          marginBottom: "20px",
+          display: 'flex',
+          gap: '10px',
+          marginBottom: '20px',
         }}
       >
         <Button title="Hello world" borderRadius="small" />
@@ -45,9 +45,9 @@ function App() {
       </div>
       <div
         style={{
-          display: "flex",
-          gap: "10px",
-          marginBottom: "20px",
+          display: 'flex',
+          gap: '10px',
+          marginBottom: '20px',
         }}
       >
         <Button title="Hello world" variant="outline" borderRadius="small" />
@@ -60,9 +60,9 @@ function App() {
       </div>
       <div
         style={{
-          display: "flex",
-          gap: "10px",
-          marginBottom: "20px",
+          display: 'flex',
+          gap: '10px',
+          marginBottom: '20px',
         }}
       >
         <Button title="Hello world" borderRadius="medium" />
@@ -70,9 +70,9 @@ function App() {
       </div>
       <div
         style={{
-          display: "flex",
-          gap: "10px",
-          marginBottom: "20px",
+          display: 'flex',
+          gap: '10px',
+          marginBottom: '20px',
         }}
       >
         <Button title="Hello world" variant="outline" borderRadius="medium" />
@@ -85,9 +85,9 @@ function App() {
       </div>
       <div
         style={{
-          display: "flex",
-          gap: "10px",
-          marginBottom: "20px",
+          display: 'flex',
+          gap: '10px',
+          marginBottom: '20px',
         }}
       >
         <Button title="Hello world" borderRadius="full" />
@@ -95,12 +95,20 @@ function App() {
       </div>
       <div
         style={{
-          display: "flex",
-          gap: "10px",
-          marginBottom: "20px",
+          display: 'flex',
+          gap: '10px',
+          marginBottom: '20px',
         }}
       >
-        <Button title="Hello world" variant="outline" borderRadius="full" />
+        <Button
+          title="Hello world"
+          variant="outline"
+          borderRadius="full"
+          onClick={() => {
+            console.log('test');
+            alert('clicked');
+          }}
+        />
         <Button
           title="Hello world"
           variant="outline"
