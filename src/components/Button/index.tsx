@@ -1,15 +1,6 @@
 import styles from "./styles.module.scss";
 import clsx from "clsx";
 
-const BUTTON_VARIANTS = {
-  primaty: "primary",
-  secondary: "secondary",
-  tertiary: "tertiary",
-  ghost: "ghost",
-  outline: "outline",
-  destructive: "destructive"
-}
-
 interface ComponentProps extends React.ComponentProps<"button"> {
   // core props
   disabled?: boolean;
@@ -18,33 +9,33 @@ interface ComponentProps extends React.ComponentProps<"button"> {
   loading?: boolean;
   onClick?: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
   title: string;
-// variants
-    variant?: "primary" | "secondary" | "tertiary" | "ghost" | "outline" | "destructive";
+  // variants
+  variant?: "solid" | "outline" | "ghost";
+  color?: "primary" | "secondary" | "success" | "danger";
   borderRadius?: "none" | "small" | "medium" | "full";
-  size?: "xs" | "sm" | "md" | "lg" | "xl"
+  size?: "xs" | "sm" | "md" | "lg" | "xl";
   fullWidth?: boolean;
 }
 
 export function Button({
-  variant = "primary",
+  variant = "solid",
   size = "md",
   title,
-  onClick
-  ...props
+  onClick,
+  disabled,
+  borderRadius,
+  color = "primary",
 }: ComponentProps) {
-  const classNames = ["button"];
-
-  if(variant) {
-    BUTTON_VARIANTS.includes(variant) ? classNames.push(`button--${variant}`) : "pri";
-  }
-
   const style = clsx(styles.button, {
-    [styles[`button--${variant}`]]: variant,
-    [styles[`button--${size}`]]: size,
+    [styles[`${variant}`]]: variant,
+    [styles[`size-${size}`]]: size,
+    [styles[`disabled`]]: disabled,
+    [styles[`radius-${borderRadius}`]]: borderRadius,
+    [styles[`color-${color}`]]: color,
   });
 
   return (
-    <button type="button" className={style} {...props} onClick={(e) => onclick}>
+    <button type="button" className={style} onClick={onClick} disabled>
       {title}
     </button>
   );
