@@ -1,4 +1,5 @@
 @use "../../styles" as *;
+@use "../../styles/mixins" as *;
 
 .button {
   background-color: none;
@@ -12,6 +13,7 @@
   align-items: center;
   justify-content: center;
   border: 1px solid transparent;
+  @include prevent-text-selection;
 
   // Primary
   &:not(.disabled) {
@@ -72,6 +74,48 @@
           background-color: $blue-light-4;
         }
       }
+
+      &.color-danger {
+        background-color: $white;
+        border-color: $red;
+        color: $red;
+
+        &:hover {
+          background-color: $red-light-5;
+        }
+
+        &:active {
+          background-color: $red-light-4;
+        }
+      }
+
+      &.color-secondary {
+        background-color: $white;
+        border-color: $dark-1;
+        color: $dark-1;
+
+        &:hover {
+          background-color: $gray-2;
+        }
+
+        &:active {
+          background-color: $gray-3;
+        }
+      }
+
+      &.color-success {
+        background-color: $white;
+        border-color: $secondary-color;
+        color: $secondary-color;
+
+        &:hover {
+          background-color: $green-light-8;
+        }
+
+        &:active {
+          background-color: $green-light-6;
+        }
+      }
     }
 
     // Ghost styles
@@ -88,6 +132,47 @@
         &:active {
           background-color: $blue-light-5;
           color: $primary-color;
+        }
+      }
+
+      &.color-secondary {
+        background-color: transparent;
+        color: $dark-1;
+
+        &:hover {
+          background-color: $gray-2;
+          color: $dark-1;
+        }
+
+        &:active {
+          background-color: $gray-3;
+          color: $dark-1;
+        }
+      }
+
+      &.color-success {
+        background-color: transparent;
+        color: $secondary-color;
+
+        &:hover {
+          background-color: $green-light-8;
+        }
+
+        &:active {
+          background-color: $green-light-6;
+        }
+      }
+
+      &.color-danger {
+        background-color: transparent;
+        color: $red;
+
+        &:hover {
+          background-color: $red-light-5;
+        }
+
+        &:active {
+          background-color: $red-light-4;
         }
       }
     }

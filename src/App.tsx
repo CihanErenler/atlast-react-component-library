@@ -10,7 +10,7 @@ function App() {
           marginBottom: '20px',
         }}
       >
-        <Button title="Hello world" color="danger" />
+        <Button title="Hello world" color="danger" variant="ghost" />
         <Button title="Hello world" disabled />
       </div>
       <div
@@ -20,7 +20,7 @@ function App() {
           marginBottom: '20px',
         }}
       >
-        <Button title="Hello world" variant="outline" />
+        <Button title="Hello world" variant="outline" color="success" />
         <Button title="Hello world" disabled />
       </div>
       <div
@@ -90,7 +90,7 @@ function App() {
           marginBottom: '20px',
         }}
       >
-        <Button title="Hello world" borderRadius="full" />
+        <Button title="Hello world" borderRadius="full" variant="outline"/>
         <Button title="Hello world" disabled borderRadius="full" />
       </div>
       <div
