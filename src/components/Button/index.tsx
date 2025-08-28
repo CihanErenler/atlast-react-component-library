@@ -17,7 +17,7 @@ interface ComponentProps extends React.ComponentProps<'button'> {
   fullWidth?: boolean;
 }
 
-const Button = ({
+export const Button = ({
   variant = 'solid',
   size = 'md',
   title,
@@ -35,10 +35,13 @@ const Button = ({
   });
 
   return (
-    <button type="button" className={style} onClick={onClick} disabled>
+    <button
+      type="button"
+      className={style}
+      onClick={onClick}
+      disabled={disabled}
+    >
       {title}
     </button>
   );
 };
-
-export default Button;
