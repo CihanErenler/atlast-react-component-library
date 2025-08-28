@@ -1,0 +1,23 @@
+.Flow {
+  display: flex;
+  gap: 10px;
+
+  // direction
+  &.direction-horizontal {
+    flex-direction: row;
+  }
+
+  &.direction-vertical {
+    flex-direction: column;
+  }
+
+  // fill
+  &.align-fill {
+    align-items: stretch;
+  }
+
+  // alignment
+  &.align-left {
+    align-items: flex-start;
+  }
+}

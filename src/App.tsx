@@ -1,39 +1,13 @@
 import { Button } from './main';
+import { Flow } from './main';
 
 function App() {
   return (
-    <section>
+    <Flow direction="vertical">
       <Button
         title="Hello world"
         borderRadius="small"
-        size="xs"
-        onClick={() => {
-          console.log('test');
-          alert('clicked');
-        }}
-      />
-      <Button
-        title="Hello world"
-        borderRadius="small"
-        size="sm"
-        onClick={() => {
-          console.log('test');
-          alert('clicked');
-        }}
-      />
-      <Button
-        title="Hello world"
-        borderRadius="small"
-        size="md"
-        onClick={() => {
-          console.log('test');
-          alert('clicked');
-        }}
-      />
-      <Button
-        title="Hello world"
-        borderRadius="small"
-        size="lg"
+        size="xl"
         onClick={() => {
           console.log('test');
           alert('clicked');
@@ -48,7 +22,34 @@ function App() {
           alert('clicked');
         }}
       />
-    </section>
+      <Button
+        title="Hello world"
+        borderRadius="small"
+        size="xl"
+        onClick={() => {
+          console.log('test');
+          alert('clicked');
+        }}
+      />
+      <Button
+        title="Hello world"
+        borderRadius="small"
+        size="xl"
+        onClick={() => {
+          console.log('test');
+          alert('clicked');
+        }}
+      />
+      <Button
+        title="Hello world"
+        borderRadius="small"
+        size="xl"
+        onClick={() => {
+          console.log('test');
+          alert('clicked');
+        }}
+      />
+    </Flow>
   );
 }
 
