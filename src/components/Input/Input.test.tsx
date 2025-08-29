@@ -1,6 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import { describe, it, expect } from 'vitest';
 import Input from './Input';
+import styles from './input.module.scss';
 
 describe('Input Component', () => {
   it('renders input element', () => {
@@ -47,12 +48,12 @@ describe('Input Component', () => {
 
   it('applies variant classes', () => {
     const { container } = render(<Input variant="filled" />);
-    expect(container.firstChild).toHaveClass('variant-filled');
+    expect(container.firstChild).toHaveClass(styles['variant-filled']);
   });
 
   it('applies size classes', () => {
     const { container } = render(<Input size="lg" />);
-    expect(container.firstChild).toHaveClass('size-lg');
+    expect(container.firstChild).toHaveClass(styles['size-lg']);
   });
 
   it('prioritizes error message over helper text', () => {
