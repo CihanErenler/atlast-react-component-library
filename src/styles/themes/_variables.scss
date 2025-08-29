@@ -1,0 +1,295 @@
+// Import your existing color variables
+@use '../colors' as *; // Your existing color file
+
+:root {
+  // ===== LIGHT THEME (DEFAULT) =====
+
+  // Brand colors - use original saturated colors for light mode
+  --color-primary: #2563eb;
+  --color-primary-hover: #1d4ed8;
+  --color-primary-light: #{$primary-light};
+  --color-primary-lighter: #{$primary-lighter};
+
+  --color-secondary: #059669;
+  --color-secondary-hover: #047857;
+  --color-secondary-light: #{$secondary-light};
+  --color-secondary-lighter: #{$secondary-lighter};
+
+  // Semantic text colors
+  --text-primary: #{$gray-900};
+  --text-secondary: #{$gray-600};
+  --text-tertiary: #{$gray-500};
+  --text-placeholder: #{$gray-400};
+  --text-disabled: #{$gray-400};
+  --text-inverse: #{$white};
+
+  // Background colors
+  --bg-primary: #{$white};
+  --bg-secondary: #{$gray-50};
+  --bg-tertiary: #{$gray-100};
+  --bg-card: #{$white};
+  --bg-input: #{$white};
+  --bg-hover: #{$gray-50};
+  --bg-active: #{$gray-100};
+  --bg-disabled: #{$gray-100};
+  --bg-overlay: rgba(15, 23, 42, 0.5);
+
+  // Border and stroke colors
+  --border-primary: #{$gray-200};
+  --border-secondary: #{$gray-300};
+  --border-input: #{$gray-300};
+  --border-focus: #{$primary-color};
+  --border-error: #{$red};
+  --border-disabled: #{$gray-200};
+
+  // Status colors - original saturated colors for light mode
+  --color-success: #059669;
+  --color-success-hover: #047857;
+  --color-success-light: #{$green-light};
+  --color-success-lighter: #{$green-lighter};
+
+  --color-warning: #d97706;
+  --color-warning-hover: #b45309;
+  --color-warning-light: #{$yellow-light};
+  --color-warning-lighter: #{$yellow-lighter};
+
+  --color-danger: #dc2626;
+  --color-danger-hover: #b91c1c;
+  --color-danger-light: #{$red-light};
+  --color-danger-lighter: #{$red-lighter};
+
+  --color-info: #2563eb;
+  --color-info-hover: #1d4ed8;
+  --color-info-light: #{$blue-light};
+  --color-info-lighter: #{$blue-lighter};
+
+  // Accent colors - original saturated colors for light mode
+  --color-purple: #7c3aed;
+  --color-purple-dark: #5b21b6;
+  --color-purple-light: #{$purple-light};
+  --color-purple-lighter: #{$purple-lighter};
+  --color-pink: #ec4899;
+  --color-pink-dark: #be185d;
+  --color-pink-light: #{$pink-light};
+  --color-pink-lighter: #{$pink-lighter};
+  --color-cyan: #06b6d4;
+  --color-cyan-dark: #0891b2;
+  --color-cyan-light: #{$cyan-light};
+  --color-cyan-lighter: #{$cyan-lighter};
+  --color-teal: #14b8a6;
+  --color-teal-dark: #0f766e;
+  --color-teal-light: #{$teal-light};
+  --color-teal-lighter: #{$teal-lighter};
+
+  // Neutral scale
+  --color-white: #{$white};
+  --color-black: #{$black};
+  --color-gray-50: #{$gray-50};
+  --color-gray-100: #{$gray-100};
+  --color-gray-200: #{$gray-200};
+  --color-gray-300: #{$gray-300};
+  --color-gray-400: #{$gray-400};
+  --color-gray-500: #{$gray-500};
+  --color-gray-600: #{$gray-600};
+  --color-gray-700: #{$gray-700};
+  --color-gray-800: #{$gray-800};
+  --color-gray-900: #{$gray-900};
+
+  // Legacy support (for existing components)
+  --color-gray-1: #{$gray-50};
+  --color-gray-2: #{$gray-100};
+  --color-gray-3: #{$gray-200};
+  --color-gray-4: #{$gray-300};
+  --color-gray-5: #{$gray-400};
+  --color-dark-1: #{$gray-900};
+  --color-dark-2: #{$gray-800};
+  --color-dark-3: #{$gray-700};
+  --color-dark-4: #{$gray-600};
+  --color-dark-5: #{$gray-500};
+  --color-dark-6: #{$gray-400};
+  --color-dark-7: #{$gray-300};
+  --color-dark-8: #{$gray-200};
+
+  // Component-specific tokens
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md:
+    0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg:
+    0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-xl:
+    0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+
+  // Typography
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  // Spacing scale (based on 4px grid)
+  --spacing-1: 0.25rem; // 4px
+  --spacing-2: 0.5rem; // 8px
+  --spacing-3: 0.75rem; // 12px
+  --spacing-4: 1rem; // 16px
+  --spacing-5: 1.25rem; // 20px
+  --spacing-6: 1.5rem; // 24px
+  --spacing-8: 2rem; // 32px
+  --spacing-10: 2.5rem; // 40px
+  --spacing-12: 3rem; // 48px
+  --spacing-16: 4rem; // 64px
+
+  // Border radius
+  --radius-sm: 0.375rem; // 6px
+  --radius-md: 0.5rem; // 8px
+  --radius-lg: 0.75rem; // 12px
+  --radius-xl: 1rem; // 16px
+  --radius-full: 9999px;
+
+  // Transitions
+  --transition-fast: 150ms ease;
+  --transition-normal: 250ms ease;
+  --transition-slow: 500ms ease;
+}
+
+// ===== DARK THEME =====
+[data-theme='dark'] {
+  // Brand colors - bright for text, but we'll override solid button backgrounds
+  --color-primary: #{$primary-color};
+  --color-primary-hover: #{$primary-hover-color};
+  --color-primary-light: rgba(37, 99, 235, 0.1);
+  --color-primary-lighter: rgba(37, 99, 235, 0.05);
+
+  --color-secondary: #{$secondary-color};
+  --color-secondary-hover: #{$secondary-hover-color};
+  --color-secondary-light: rgba(5, 150, 105, 0.1);
+  --color-secondary-lighter: rgba(5, 150, 105, 0.05);
+
+  // Solid button specific colors (darker, more saturated for backgrounds)
+  --color-primary-solid: #2563eb;
+  --color-primary-solid-hover: #1d4ed8;
+  --color-secondary-solid: #059669;
+  --color-secondary-solid-hover: #047857;
+
+  // Text colors - inverted hierarchy
+  --text-primary: #{$dark-text-primary};
+  --text-secondary: #{$dark-text-secondary};
+  --text-tertiary: #{$gray-300};
+  --text-placeholder: #{$gray-400};
+  --text-disabled: #{$gray-500};
+  --text-inverse: #{$gray-900};
+
+  // Background colors - dark variants
+  --bg-primary: #{$dark-bg-primary};
+  --bg-secondary: #{$dark-bg-secondary};
+  --bg-tertiary: #{$dark-bg-tertiary};
+  --bg-card: #{$dark-bg-secondary};
+  --bg-input: #{$dark-bg-secondary};
+  --bg-hover: #{$dark-bg-tertiary};
+  --bg-active: #3c4858;
+  --bg-disabled: #{$dark-bg-secondary};
+  --bg-overlay: rgba(15, 20, 25, 0.9);
+
+  // Border colors - subtle in dark theme
+  --border-primary: #{$dark-border};
+  --border-secondary: #{$gray-600};
+  --border-input: #{$gray-600};
+  --border-focus: #{$primary-color};
+  --border-error: #{$red};
+  --border-disabled: #{$gray-700};
+
+  // Status colors - bright for text
+  --color-success: #{$green};
+  --color-success-hover: #{$green-dark};
+  --color-success-light: rgba(5, 150, 105, 0.1);
+  --color-success-lighter: rgba(5, 150, 105, 0.05);
+
+  --color-warning: #{$yellow};
+  --color-warning-hover: #{$yellow-dark};
+  --color-warning-light: rgba(217, 119, 6, 0.1);
+  --color-warning-lighter: rgba(217, 119, 6, 0.05);
+
+  --color-danger: #{$red};
+  --color-danger-hover: #{$red-dark};
+  --color-danger-light: rgba(220, 38, 38, 0.1);
+  --color-danger-lighter: rgba(220, 38, 38, 0.05);
+
+  --color-info: #{$blue};
+  --color-info-hover: #{$blue-dark};
+  --color-info-light: rgba(37, 99, 235, 0.1);
+  --color-info-lighter: rgba(37, 99, 235, 0.05);
+
+  // Solid button specific status colors (darker for backgrounds)
+  --color-success-solid: #059669;
+  --color-success-solid-hover: #047857;
+  --color-warning-solid: #d97706;
+  --color-warning-solid-hover: #b45309;
+  --color-danger-solid: #dc2626;
+  --color-danger-solid-hover: #b91c1c;
+  --color-info-solid: #2563eb;
+  --color-info-solid-hover: #1d4ed8;
+
+  // Accent colors - bright for text
+  --color-purple: #{$purple};
+  --color-purple-dark: #{$purple-dark};
+  --color-purple-light: rgba(124, 58, 237, 0.1);
+  --color-purple-lighter: rgba(124, 58, 237, 0.05);
+  --color-pink: #{$pink};
+  --color-pink-dark: #{$pink-dark};
+  --color-pink-light: rgba(236, 72, 153, 0.1);
+  --color-pink-lighter: rgba(236, 72, 153, 0.05);
+  --color-cyan: #{$cyan};
+  --color-cyan-dark: #{$cyan-dark};
+  --color-cyan-light: rgba(6, 182, 212, 0.1);
+  --color-cyan-lighter: rgba(6, 182, 212, 0.05);
+  --color-teal: #{$teal};
+  --color-teal-dark: #{$teal-dark};
+  --color-teal-light: rgba(20, 184, 166, 0.1);
+  --color-teal-lighter: rgba(20, 184, 166, 0.05);
+
+  // Solid button specific accent colors (darker for backgrounds)
+  --color-purple-solid: #7c3aed;
+  --color-purple-solid-hover: #5b21b6;
+  --color-pink-solid: #ec4899;
+  --color-pink-solid-hover: #be185d;
+  --color-cyan-solid: #06b6d4;
+  --color-cyan-solid-hover: #0891b2;
+  --color-teal-solid: #14b8a6;
+  --color-teal-solid-hover: #0f766e;
+
+  // Neutral scale - navy-based for dark theme
+  --color-white: #{$white};
+  --color-black: #{$black};
+  --color-gray-50: #{$dark-bg-primary};
+  --color-gray-100: #{$dark-bg-secondary};
+  --color-gray-200: #{$dark-bg-tertiary};
+  --color-gray-300: #3c4858;
+  --color-gray-400: #{$gray-500};
+  --color-gray-500: #{$gray-400};
+  --color-gray-600: #{$gray-300};
+  --color-gray-700: #{$gray-200};
+  --color-gray-800: #{$gray-100};
+  --color-gray-900: #{$gray-50};
+
+  // Legacy support - flipped for dark theme
+  --color-gray-1: #{$dark-bg-tertiary};
+  --color-gray-2: #{$gray-600};
+  --color-gray-3: #{$gray-500};
+  --color-gray-4: #{$gray-400};
+  --color-gray-5: #{$gray-300};
+  --color-dark-1: #{$dark-text-primary};
+  --color-dark-2: #{$dark-text-secondary};
+  --color-dark-3: #{$gray-400};
+  --color-dark-4: #{$gray-500};
+  --color-dark-5: #{$gray-600};
+  --color-dark-6: #{$gray-400};
+  --color-dark-7: #{$gray-300};
+  --color-dark-8: #{$gray-200};
+
+  // Shadows - darker and more prominent
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+  --shadow-md:
+    0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+  --shadow-lg:
+    0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -2px rgba(0, 0, 0, 0.3);
+  --shadow-xl:
+    0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 10px 10px -5px rgba(0, 0, 0, 0.4);
+}

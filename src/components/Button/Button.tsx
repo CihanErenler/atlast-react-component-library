@@ -1,4 +1,5 @@
-import styles from './styles.module.scss';
+import { mergeClassNames } from '../../utils/classNameFunctions';
+import styles from './button.module.scss';
 import clsx from 'clsx';
 
 interface ComponentProps extends React.ComponentProps<'button'> {
@@ -10,14 +11,25 @@ interface ComponentProps extends React.ComponentProps<'button'> {
   onClick?: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
   title: string;
   // variants
-  variant?: 'solid' | 'outline' | 'ghost';
-  color?: 'primary' | 'secondary' | 'success' | 'danger';
+  variant?: 'solid' | 'outline' | 'ghost' | 'soft';
+  color?:
+    | 'primary'
+    | 'secondary'
+    | 'success'
+    | 'danger'
+    | 'warning'
+    | 'info'
+    | 'purple'
+    | 'pink'
+    | 'cyan'
+    | 'teal';
   borderRadius?: 'none' | 'small' | 'medium' | 'full';
   size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
   fullWidth?: boolean;
+  classNames?: string;
 }
 
-export const Button = ({
+const Button = ({
   variant = 'solid',
   size = 'md',
   title,
@@ -25,7 +37,10 @@ export const Button = ({
   disabled,
   borderRadius,
   color = 'primary',
+  className = '',
 }: ComponentProps) => {
+  const passedClassNames = className ? className.split(' ') : [];
+
   const style = clsx(styles.button, {
     [styles[`${variant}`]]: variant,
     [styles[`size-${size}`]]: size,
@@ -37,7 +52,7 @@ export const Button = ({
   return (
     <button
       type="button"
-      className={style}
+      className={mergeClassNames(style, passedClassNames)}
       onClick={onClick}
       disabled={disabled}
     >
@@ -45,3 +60,5 @@ export const Button = ({
     </button>
   );
 };
+
+export default Button;
