@@ -51,7 +51,7 @@
   &.hoverable:hover,
   &.clickable:hover {
     border-color: var(--border-hover);
-    box-shadow: var(--shadow-sm);
+    // box-shadow: var(--shadow-sm);
   }
 
   &.clickable:active {
@@ -119,6 +119,7 @@
 
 .header {
   padding: var(--spacing-4) var(--spacing-4) 0 var(--spacing-4);
+  box-shadow: none;
 }
 
 .title {
@@ -127,12 +128,14 @@
   font-weight: var(--font-weight-semibold);
   color: var(--text-primary);
   line-height: 1.4;
+  box-shadow: none;
 }
 
 .titleContainer {
   display: flex;
   align-items: center;
   gap: var(--spacing-2);
+  box-shadow: none;
 }
 
 .body {
