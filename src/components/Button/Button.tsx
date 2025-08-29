@@ -11,8 +11,18 @@ interface ComponentProps extends React.ComponentProps<'button'> {
   onClick?: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
   title: string;
   // variants
-  variant?: 'solid' | 'outline' | 'ghost';
-  color?: 'primary' | 'secondary' | 'success' | 'danger';
+  variant?: 'solid' | 'outline' | 'ghost' | 'soft';
+  color?:
+    | 'primary'
+    | 'secondary'
+    | 'success'
+    | 'danger'
+    | 'warning'
+    | 'info'
+    | 'purple'
+    | 'pink'
+    | 'cyan'
+    | 'teal';
   borderRadius?: 'none' | 'small' | 'medium' | 'full';
   size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
   fullWidth?: boolean;

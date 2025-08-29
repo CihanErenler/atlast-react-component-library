@@ -1,108 +1,171 @@
-// Main colors
-$primary-color: #3758f9;
-$secondary-color: #13c296;
-$primary-text-color: #18232d;
-$secondary-text-color: #637381;
-$stroke-color: #dfe4ea;
+// Primary brand colors - Modern blue palette
+$primary-color: #60a5fa; // Brighter blue for better dark mode visibility
+$primary-hover-color: #3b82f6;
+$primary-light: #dbeafe;
+$primary-lighter: #eff6ff;
 
-// Hover colors
-$primary-hover-color: #1b44c8;
+// Secondary brand color - Sophisticated emerald
+$secondary-color: #34d399; // Brighter green for dark mode
+$secondary-hover-color: #10b981;
+$secondary-light: #d1fae5;
+$secondary-lighter: #ecfdf5;
 
-// Dark colors
-$dark-1: #111928;
-$dark-2: #1f2a37;
-$dark-3: #374151;
-$dark-4: #4b5563;
-$dark-5: #6b7280;
-$dark-6: #9ca3af;
-$dark-7: #d1d5db;
-$dark-8: #e5e7eb;
-
+// Neutral colors - Improved gray scale with better contrast
 $white: #ffffff;
+$black: #000000;
 
-$gray-1: #f9fafb;
-$gray-2: #f3f4f6;
-$gray-3: #e5e7eb;
-$gray-4: #dee2e6;
-$gray-5: #ced4da;
+// Light mode neutrals
+$gray-50: #f8fafc;
+$gray-100: #f1f5f9;
+$gray-200: #e2e8f0;
+$gray-300: #cbd5e1;
+$gray-400: #94a3b8;
+$gray-500: #64748b;
+$gray-600: #475569;
+$gray-700: #334155;
+$gray-800: #1e293b;
+$gray-900: #0f172a;
 
-// Yellow colors
-$yellow: #fbbf24;
-$yellow-dark-1: #f59e0b;
-$yellow-dark-2: #d97706;
-$yellow-light-1: #fcd34d;
-$yellow-light-2: #fde68a;
-$yellow-light-3: #fef3c7;
-$yellow-light-4: #fffbeb;
+// Dark mode specific colors
+$dark-bg-primary: #0f1419;
+$dark-bg-secondary: #1a202c;
+$dark-bg-tertiary: #2d3748;
+$dark-text-primary: #ffffff;
+$dark-text-secondary: #e2e8f0;
+$dark-border: #4a5568;
 
-// Orange colors
-$orange: #f27430;
-$orange-dark: #e1580e;
-$orange-light-1: #f59460;
-$orange-light-2: #f8b490;
-$orange-light-3: #fbd5c0;
-$orange-light-4: #fde5d8;
-$orange-light-5: #fff0e9;
+// Legacy support (mapping to new colors)
+$primary-text-color: $gray-900;
+$secondary-text-color: $gray-600;
+$stroke-color: $gray-200;
 
-// Red colors
-$red: #f23030;
-$red-dark: #e10e0e;
-$red-light-1: #f56060;
-$red-light-2: #f89090;
-$red-light-3: #fbc0c0;
-$red-light-4: #fdd8d8;
-$red-light-5: #feebeb;
-$red-light-6: #fef3f3;
+$dark-1: $dark-bg-primary;
+$dark-2: $dark-bg-secondary;
+$dark-3: $dark-bg-tertiary;
+$dark-4: $gray-600;
+$dark-5: $gray-500;
+$dark-6: $gray-400;
+$dark-7: $gray-300;
+$dark-8: $gray-200;
 
-// Pink colors
-$pink: #d345f8;
-$pink-dark: #c814f6;
-$pink-light-1: #df76fa;
-$pink-light-2: #eaa7fc;
-$pink-light-3: #f6d8fe;
-$pink-light-4: #fcf1fe;
+$gray-1: $gray-50;
+$gray-2: $gray-100;
+$gray-3: $gray-200;
+$gray-4: $gray-300;
+$gray-5: $gray-400;
 
-// Purple colors
-$purple: #8646f4;
-$purple-dark-1: #6d28d9;
-$purple-dark-2: #5b21b6;
+// Status colors - Modern, accessible palette
+
+// Success (Green) - Fresh, natural green
+$green: #22c55e; // Brighter green
+$green-dark: #16a34a;
+$green-light: #d1fae5;
+$green-lighter: #ecfdf5;
+
+// Warning (Amber) - Warm, attention-grabbing
+$yellow: #fbbf24; // Brighter amber
+$yellow-dark: #f59e0b;
+$yellow-light: #fef3c7;
+$yellow-lighter: #fffbeb;
+
+// Error (Red) - Clear, assertive red
+$red: #f87171; // Brighter red
+$red-dark: #ef4444;
+$red-light: #fecaca;
+$red-lighter: #fef2f2;
+
+// Info (Blue) - Calm, informative blue
+$blue: #60a5fa; // Same as primary, brighter blue
+$blue-dark: #3b82f6;
+$blue-light: #dbeafe;
+$blue-lighter: #eff6ff;
+
+// Legacy color mappings for backward compatibility
+$orange: #ea580c;
+$orange-dark: #c2410c;
+$orange-light-1: #fed7aa;
+$orange-light-2: #ffedd5;
+$orange-light-3: #fff7ed;
+$orange-light-4: #fff7ed;
+$orange-light-5: #fff7ed;
+
+$yellow-dark-1: $yellow-dark;
+$yellow-dark-2: #92400e;
+$yellow-light-1: #fbbf24;
+$yellow-light-2: #fcd34d;
+$yellow-light-3: $yellow-light;
+$yellow-light-4: $yellow-lighter;
+
+$red-dark: $red-dark;
+$red-light-1: #f87171;
+$red-light-2: #fca5a5;
+$red-light-3: $red-light;
+$red-light-4: #fee2e2;
+$red-light-5: $red-lighter;
+$red-light-6: $red-lighter;
+
+// Accent colors - Modern, cohesive palette
+
+// Purple - Sophisticated and modern
+$purple: #a78bfa; // Much brighter purple for dark mode
+$purple-dark: #8b5cf6;
+$purple-light: #ddd6fe;
+$purple-lighter: #f5f3ff;
+
+// Pink - Vibrant and friendly
+$pink: #f472b6; // Brighter pink
+$pink-dark: #ec4899;
+$pink-light: #fbcfe8;
+$pink-lighter: #fdf2f8;
+
+// Cyan - Fresh and tech-forward
+$cyan: #22d3ee; // Much brighter cyan
+$cyan-dark: #06b6d4;
+$cyan-light: #cffafe;
+$cyan-lighter: #ecfeff;
+
+// Teal - Balanced and calming
+$teal: #2dd4bf; // Brighter teal
+$teal-dark: #14b8a6;
+$teal-light: #ccfbf1;
+$teal-lighter: #f0fdfa;
+
+// Legacy support mappings
+$purple-dark-1: $purple-dark;
+$purple-dark-2: #4c1d95;
 $purple-light-1: #a78bfa;
 $purple-light-2: #c4b5fd;
-$purple-light-3: #ddd6fe;
+$purple-light-3: $purple-light;
 $purple-light-4: #ede9fe;
-$purple-light-5: #f5f3ff;
+$purple-light-5: $purple-lighter;
 
-// Blue colors
-$blue: #2d68f8;
-$blue-dark: #1c3fb7;
-$blue-light-1: #5475e5;
-$blue-light-2: #8099ec;
-$blue-light-3: #adbcf2;
-$blue-light-4: #c3cef6;
-$blue-light-5: #e1e8ff;
+$pink-dark: $pink-dark;
+$pink-light-1: #f472b6;
+$pink-light-2: #f9a8d4;
+$pink-light-3: $pink-light;
+$pink-light-4: $pink-lighter;
 
-// Cyan colors
-$cyan: #01a9db;
-$cyan-dark: #0b76b7;
-$cyan-light-1: #18bfff;
-$cyan-light-2: #77d1f3;
-$cyan-light-3: #d0f0fd;
+$blue-light-1: #60a5fa;
+$blue-light-2: #93c5fd;
+$blue-light-3: #bfdbfe;
+$blue-light-4: #dbeafe;
+$blue-light-5: $blue-lighter;
 
-// Teal colors
-$teal: #02aaa4;
-$teal-dark: #06a09b;
-$teal-light-1: #20d9d2;
-$teal-light-2: #72ddc3;
-$teal-light-3: #c2f5e9;
+$cyan-dark: $cyan-dark;
+$cyan-light-1: #22d3ee;
+$cyan-light-2: #67e8f9;
+$cyan-light-3: $cyan-light;
 
-// Green colors
-$green: #22ad5c;
-$green-dark: #1a8245;
-$green-light-1: #2cd673;
-$green-light-2: #57de8f;
-$green-light-3: #82e6ac;
-$green-light-4: #acefc8;
-$green-light-5: #c2f3d6;
-$green-light-6: #daf8e6;
-$green-light-7: #eafff2;
-$green-light-8: #f0fff6;
+$teal-dark: $teal-dark;
+$teal-light-1: #2dd4bf;
+$teal-light-2: #5eead4;
+$teal-light-3: $teal-light;
+
+$green-light-1: #34d399;
+$green-light-2: #6ee7b7;
+$green-light-3: #a7f3d0;
+$green-light-4: $green-light;
+$green-light-5: #d1fae5;
+$green-light-6: $green-lighter;
+$green-light-7: $green-lighter;
+$green-light-8: $green-lighter;
