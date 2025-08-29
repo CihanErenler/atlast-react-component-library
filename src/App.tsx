@@ -2,6 +2,7 @@ import React from 'react';
 import { ThemeToggle } from './components/ThemeSwitcher/ThemeSwitcher';
 import Button from './components/Button/Button';
 import Input from './components/Input/Input';
+import Card from './components/Card/Card';
 import { useTheme } from './hooks/useTheme';
 
 function App() {
@@ -892,6 +893,408 @@ function App() {
                 fullWidth
                 helperText="This input spans the full width"
               />
+            </div>
+          </div>
+        </div>
+
+        {/* Card Component Showcase */}
+        <div className="card" style={{ marginTop: '2rem' }}>
+          <h3>Card Components</h3>
+          <p>
+            Flexible card components with multiple variants and interactive
+            states
+          </p>
+
+          {/* Card Variants */}
+          <div style={{ marginTop: '1.5rem' }}>
+            <h4>Card Variants</h4>
+            <div
+              style={{
+                display: 'grid',
+                gap: '1.5rem',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
+                marginTop: '1rem',
+              }}
+            >
+              <Card variant="elevated">
+                <h5
+                  style={{
+                    margin: '0 0 0.5rem 0',
+                    color: 'var(--text-primary)',
+                  }}
+                >
+                  Elevated Card
+                </h5>
+                <p style={{ margin: 0, color: 'var(--text-secondary)' }}>
+                  Uses shadows to create depth and hierarchy. Perfect for
+                  content that needs to stand out.
+                </p>
+              </Card>
+
+              <Card variant="outlined">
+                <h5
+                  style={{
+                    margin: '0 0 0.5rem 0',
+                    color: 'var(--text-primary)',
+                  }}
+                >
+                  Outlined Card
+                </h5>
+                <p style={{ margin: 0, color: 'var(--text-secondary)' }}>
+                  Clean border-based design. Great for subtle content
+                  separation.
+                </p>
+              </Card>
+
+              <Card variant="filled">
+                <h5
+                  style={{
+                    margin: '0 0 0.5rem 0',
+                    color: 'var(--text-primary)',
+                  }}
+                >
+                  Filled Card
+                </h5>
+                <p style={{ margin: 0, color: 'var(--text-secondary)' }}>
+                  Background-based variant. Ideal for grouped content areas.
+                </p>
+              </Card>
+            </div>
+          </div>
+
+          {/* Padding Variants */}
+          <div style={{ marginTop: '2rem' }}>
+            <h4>Padding Options</h4>
+            <div
+              style={{
+                display: 'grid',
+                gap: '1.5rem',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+                marginTop: '1rem',
+              }}
+            >
+              <Card padding="sm">
+                <strong>Small Padding</strong>
+                <p style={{ margin: '0.5rem 0 0 0', fontSize: '0.875rem' }}>
+                  Compact spacing for dense layouts
+                </p>
+              </Card>
+
+              <Card padding="md">
+                <strong>Medium Padding</strong>
+                <p style={{ margin: '0.5rem 0 0 0', fontSize: '0.875rem' }}>
+                  Standard spacing for most use cases
+                </p>
+              </Card>
+
+              <Card padding="lg">
+                <strong>Large Padding</strong>
+                <p style={{ margin: '0.5rem 0 0 0', fontSize: '0.875rem' }}>
+                  Generous spacing for important content
+                </p>
+              </Card>
+
+              <Card
+                padding="none"
+                style={{ border: '2px dashed var(--border-primary)' }}
+              >
+                <div style={{ padding: 'var(--spacing-3)' }}>
+                  <strong>No Padding</strong>
+                  <p style={{ margin: '0.5rem 0 0 0', fontSize: '0.875rem' }}>
+                    Full control over internal spacing
+                  </p>
+                </div>
+              </Card>
+            </div>
+          </div>
+
+          {/* Interactive Cards */}
+          <div style={{ marginTop: '2rem' }}>
+            <h4>Interactive States</h4>
+            <div
+              style={{
+                display: 'grid',
+                gap: '1.5rem',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
+                marginTop: '1rem',
+              }}
+            >
+              <Card hoverable>
+                <h5 style={{ margin: '0 0 0.5rem 0' }}>Hoverable Card</h5>
+                <p style={{ margin: 0, color: 'var(--text-secondary)' }}>
+                  Hover over this card to see the effect. Great for content that
+                  users can explore.
+                </p>
+              </Card>
+
+              <Card clickable onClick={() => alert('Card clicked!')}>
+                <h5 style={{ margin: '0 0 0.5rem 0' }}>Clickable Card</h5>
+                <p style={{ margin: 0, color: 'var(--text-secondary)' }}>
+                  Click this card to see the interaction. Perfect for navigation
+                  or actions.
+                </p>
+              </Card>
+
+              <Card
+                variant="outlined"
+                clickable
+                onClick={() => alert('Outlined clickable card!')}
+              >
+                <h5 style={{ margin: '0 0 0.5rem 0' }}>Outlined + Clickable</h5>
+                <p style={{ margin: 0, color: 'var(--text-secondary)' }}>
+                  Combines variants with interactive states seamlessly.
+                </p>
+              </Card>
+            </div>
+          </div>
+
+          {/* Radius Options */}
+          <div style={{ marginTop: '2rem' }}>
+            <h4>Border Radius</h4>
+            <div
+              style={{
+                display: 'grid',
+                gap: '1.5rem',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))',
+                marginTop: '1rem',
+              }}
+            >
+              <Card radius="none" padding="sm">
+                <strong>No Radius</strong>
+                <p style={{ margin: '0.25rem 0 0 0', fontSize: '0.875rem' }}>
+                  Sharp corners
+                </p>
+              </Card>
+
+              <Card radius="sm" padding="sm">
+                <strong>Small Radius</strong>
+                <p style={{ margin: '0.25rem 0 0 0', fontSize: '0.875rem' }}>
+                  Subtle rounding
+                </p>
+              </Card>
+
+              <Card radius="md" padding="sm">
+                <strong>Medium Radius</strong>
+                <p style={{ margin: '0.25rem 0 0 0', fontSize: '0.875rem' }}>
+                  Standard rounding
+                </p>
+              </Card>
+
+              <Card radius="lg" padding="sm">
+                <strong>Large Radius</strong>
+                <p style={{ margin: '0.25rem 0 0 0', fontSize: '0.875rem' }}>
+                  Generous rounding
+                </p>
+              </Card>
+            </div>
+          </div>
+
+          {/* Title and Footer Examples */}
+          <div style={{ marginTop: '2rem' }}>
+            <h4>Cards with Title and Footer</h4>
+            <div
+              style={{
+                display: 'grid',
+                gap: '1.5rem',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+                marginTop: '1rem',
+              }}
+            >
+              {/* Simple Title Card */}
+              <Card title="Settings">
+                <p style={{ margin: 0, color: 'var(--text-secondary)' }}>
+                  Configure your application preferences and account settings.
+                </p>
+              </Card>
+
+              {/* Card with Footer */}
+              <Card
+                title="Project Status"
+                footer={
+                  <div
+                    style={{ display: 'flex', justifyContent: 'space-between' }}
+                  >
+                    <span>Last updated: 2 hours ago</span>
+                    <Button size="sm" variant="outline" title="View Details">
+                      View Details
+                    </Button>
+                  </div>
+                }
+              >
+                <p style={{ margin: 0, color: 'var(--text-secondary)' }}>
+                  Your project is building successfully. All tests are passing.
+                </p>
+              </Card>
+
+              {/* Custom Title with Icon */}
+              <Card
+                title={
+                  <div
+                    style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '0.5rem',
+                    }}
+                  >
+                    <span>🎯</span>
+                    <span>Achievements</span>
+                  </div>
+                }
+                footer={
+                  <Button size="sm" fullWidth title="View All Achievements">
+                    View All Achievements
+                  </Button>
+                }
+              >
+                <p style={{ margin: 0, color: 'var(--text-secondary)' }}>
+                  You've completed 8 out of 12 challenges this month.
+                </p>
+              </Card>
+            </div>
+          </div>
+
+          {/* Real-world Examples */}
+          <div style={{ marginTop: '2rem' }}>
+            <h4>Real-world Examples</h4>
+            <div
+              style={{
+                display: 'grid',
+                gap: '1.5rem',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+                marginTop: '1rem',
+              }}
+            >
+              {/* User Profile Card with Title */}
+              <Card title="Team Member">
+                <div
+                  style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}
+                >
+                  <div
+                    style={{
+                      width: '48px',
+                      height: '48px',
+                      borderRadius: '50%',
+                      backgroundColor: 'var(--color-primary)',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      color: 'white',
+                      fontWeight: 'bold',
+                    }}
+                  >
+                    JD
+                  </div>
+                  <div>
+                    <h6 style={{ margin: '0 0 0.25rem 0' }}>John Doe</h6>
+                    <p
+                      style={{
+                        margin: 0,
+                        color: 'var(--text-secondary)',
+                        fontSize: '0.875rem',
+                      }}
+                    >
+                      Frontend Developer
+                    </p>
+                  </div>
+                </div>
+              </Card>
+
+              {/* Stats Card with Footer */}
+              <Card
+                title="Monthly Stats"
+                variant="filled"
+                footer={
+                  <div
+                    style={{
+                      display: 'flex',
+                      justifyContent: 'space-between',
+                      alignItems: 'center',
+                    }}
+                  >
+                    <span style={{ fontSize: '0.875rem' }}>
+                      ↗ +12% from last month
+                    </span>
+                    <Button size="sm" variant="ghost" title="Details">
+                      Details
+                    </Button>
+                  </div>
+                }
+              >
+                <div
+                  style={{
+                    display: 'grid',
+                    gridTemplateColumns: '1fr 1fr',
+                    gap: '1rem',
+                  }}
+                >
+                  <div>
+                    <div
+                      style={{
+                        fontSize: '1.5rem',
+                        fontWeight: 'bold',
+                        color: 'var(--color-primary)',
+                      }}
+                    >
+                      1,234
+                    </div>
+                    <div
+                      style={{
+                        fontSize: '0.875rem',
+                        color: 'var(--text-secondary)',
+                      }}
+                    >
+                      Users
+                    </div>
+                  </div>
+                  <div>
+                    <div
+                      style={{
+                        fontSize: '1.5rem',
+                        fontWeight: 'bold',
+                        color: 'var(--color-success)',
+                      }}
+                    >
+                      98.5%
+                    </div>
+                    <div
+                      style={{
+                        fontSize: '0.875rem',
+                        color: 'var(--text-secondary)',
+                      }}
+                    >
+                      Uptime
+                    </div>
+                  </div>
+                </div>
+              </Card>
+
+              {/* Action Card with structured layout */}
+              <Card
+                title="🚀 Get Started"
+                variant="outlined"
+                clickable
+                onClick={() => alert('Getting started!')}
+                footer={
+                  <span
+                    style={{
+                      fontSize: '0.875rem',
+                      color: 'var(--color-primary)',
+                    }}
+                  >
+                    Learn more →
+                  </span>
+                }
+              >
+                <p
+                  style={{
+                    margin: 0,
+                    color: 'var(--text-secondary)',
+                  }}
+                >
+                  Ready to build something amazing? Click here to begin your
+                  journey.
+                </p>
+              </Card>
             </div>
           </div>
         </div>
