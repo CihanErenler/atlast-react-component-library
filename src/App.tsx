@@ -1,9 +1,36 @@
+import React from 'react';
 import { ThemeToggle } from './components/ThemeSwitcher/ThemeSwitcher';
 import Button from './components/Button/Button';
+import Input from './components/Input/Input';
 import { useTheme } from './hooks/useTheme';
 
 function App() {
   const { theme } = useTheme(); // You can access theme anywhere in your app
+
+  // State for controlled inputs in demos
+  const [searchValue, setSearchValue] = React.useState('');
+  const [passwordValue, setPasswordValue] = React.useState('');
+  const [emailValue, setEmailValue] = React.useState('');
+  const [websiteValue, setWebsiteValue] = React.useState('mysite');
+  const [priceValue, setPriceValue] = React.useState('');
+  const [weightValue, setWeightValue] = React.useState('');
+  const [simplePasswordValue, setSimplePasswordValue] = React.useState('');
+  const [strongPasswordValue, setStrongPasswordValue] = React.useState('');
+  const [confirmPasswordValue, setConfirmPasswordValue] =
+    React.useState('different');
+  const [tweetValue, setTweetValue] = React.useState('');
+  const [bioValue, setBioValue] = React.useState(
+    'I love building great user interfaces with modern technologies.'
+  );
+  const [usernameValue, setUsernameValue] = React.useState('');
+  const [requiredEmailValue, setRequiredEmailValue] = React.useState('');
+  const [validationPasswordValue, setValidationPasswordValue] =
+    React.useState('123');
+  const [promoCodeValue, setPromoCodeValue] = React.useState('INVALID');
+  const [httpsSearchValue, setHttpsSearchValue] = React.useState('');
+  const [outlineValue, setOutlineValue] = React.useState('');
+  const [filledValue, setFilledValue] = React.useState('');
+  const [underlineValue, setUnderlineValue] = React.useState('');
 
   return (
     <div className="app">
@@ -452,6 +479,419 @@ function App() {
               >
                 Placeholder text - Form placeholders
               </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Input Component Showcase */}
+        <div className="card" style={{ marginTop: '2rem' }}>
+          <h3>Input Components</h3>
+          <p>
+            Flexible input components with multiple variants and enhanced
+            features
+          </p>
+
+          {/* Basic Input Variants */}
+          <div style={{ marginTop: '1.5rem' }}>
+            <h4>Input Variants</h4>
+            <div
+              style={{
+                display: 'grid',
+                gap: '1.5rem',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+                marginTop: '1rem',
+              }}
+            >
+              <Input
+                label="Outline Input"
+                placeholder="Enter text..."
+                value={outlineValue}
+                onChange={(e) => setOutlineValue(e.target.value)}
+                variant="outline"
+                helperText="This is an outline input"
+              />
+              <Input
+                label="Filled Input"
+                placeholder="Enter text..."
+                value={filledValue}
+                onChange={(e) => setFilledValue(e.target.value)}
+                variant="filled"
+                helperText="This is a filled input"
+              />
+              <Input
+                label="Underline Input"
+                placeholder="Enter text..."
+                value={underlineValue}
+                onChange={(e) => setUnderlineValue(e.target.value)}
+                variant="underline"
+                helperText="This is an underline input"
+              />
+            </div>
+          </div>
+
+          {/* Input with Icons */}
+          <div style={{ marginTop: '2rem' }}>
+            <h4>Input with Icons</h4>
+            <div
+              style={{
+                display: 'grid',
+                gap: '1.5rem',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+                marginTop: '1rem',
+              }}
+            >
+              <Input
+                label="Search"
+                placeholder="Search..."
+                value={searchValue}
+                onChange={(e) => setSearchValue(e.target.value)}
+                startIcon={
+                  <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="m21 21-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                    />
+                  </svg>
+                }
+                helperText="Search with start icon"
+              />
+              <Input
+                label="Password with Toggle"
+                type="password"
+                placeholder="Enter password..."
+                value={passwordValue}
+                onChange={(e) => setPasswordValue(e.target.value)}
+                showPasswordToggle
+                helperText="Click the eye icon to toggle visibility"
+              />
+              <Input
+                label="Email with Both Icons"
+                type="email"
+                placeholder="your@email.com"
+                value={emailValue}
+                onChange={(e) => setEmailValue(e.target.value)}
+                startIcon={
+                  <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207"
+                    />
+                  </svg>
+                }
+                endIcon={
+                  <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                    />
+                  </svg>
+                }
+                helperText="Email with verification status"
+              />
+            </div>
+          </div>
+
+          {/* Password Toggle Demo */}
+          <div style={{ marginTop: '2rem' }}>
+            <h4>Password Toggle Functionality</h4>
+            <div
+              style={{
+                display: 'grid',
+                gap: '1.5rem',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+                marginTop: '1rem',
+              }}
+            >
+              <Input
+                label="Simple Password"
+                type="password"
+                placeholder="Enter password..."
+                value={simplePasswordValue}
+                onChange={(e) => setSimplePasswordValue(e.target.value)}
+                showPasswordToggle
+                helperText="Toggle visibility with the eye icon"
+              />
+              <Input
+                label="Password with Requirements"
+                type="password"
+                placeholder="Strong password..."
+                value={strongPasswordValue}
+                onChange={(e) => setStrongPasswordValue(e.target.value)}
+                showPasswordToggle
+                maxLength={50}
+                showCharacterCount
+                helperText="Must be at least 8 characters"
+              />
+              <Input
+                label="Confirm Password"
+                type="password"
+                placeholder="Confirm password..."
+                value={confirmPasswordValue}
+                onChange={(e) => setConfirmPasswordValue(e.target.value)}
+                showPasswordToggle
+                error="Passwords don't match"
+              />
+            </div>
+          </div>
+
+          {/* Input with Text */}
+          <div style={{ marginTop: '2rem' }}>
+            <h4>Input with Text Addons</h4>
+            <div
+              style={{
+                display: 'grid',
+                gap: '1.5rem',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+                marginTop: '1rem',
+              }}
+            >
+              <Input
+                label="Website URL"
+                placeholder="mysite"
+                value={websiteValue}
+                onChange={(e) => setWebsiteValue(e.target.value)}
+                startText="https://"
+                endText=".com"
+                helperText="Enter your website name"
+              />
+              <Input
+                label="Price"
+                placeholder="0.00"
+                value={priceValue}
+                onChange={(e) => setPriceValue(e.target.value)}
+                startText="$"
+                helperText="Enter amount in USD"
+              />
+              <Input
+                label="Weight"
+                placeholder="0"
+                value={weightValue}
+                onChange={(e) => setWeightValue(e.target.value)}
+                endText="kg"
+                helperText="Enter weight in kilograms"
+              />
+            </div>
+          </div>
+
+          {/* Character Counter */}
+          <div style={{ marginTop: '2rem' }}>
+            <h4>Character Counter</h4>
+            <div
+              style={{
+                display: 'grid',
+                gap: '1.5rem',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+                marginTop: '1rem',
+              }}
+            >
+              <Input
+                label="Tweet"
+                placeholder="What's happening?"
+                value={tweetValue}
+                onChange={(e) => setTweetValue(e.target.value)}
+                maxLength={280}
+                showCharacterCount
+                helperText="Share your thoughts"
+              />
+              <Input
+                label="Bio"
+                placeholder="Tell us about yourself..."
+                value={bioValue}
+                onChange={(e) => setBioValue(e.target.value)}
+                maxLength={160}
+                showCharacterCount
+                helperText="Keep it short and sweet"
+              />
+              <Input
+                label="Username"
+                placeholder="johndoe"
+                value={usernameValue}
+                onChange={(e) => setUsernameValue(e.target.value)}
+                showCharacterCount
+                helperText="Character count without limit"
+              />
+            </div>
+          </div>
+
+          {/* Error States */}
+          <div style={{ marginTop: '2rem' }}>
+            <h4>Enhanced Error States</h4>
+            <div
+              style={{
+                display: 'grid',
+                gap: '1.5rem',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+                marginTop: '1rem',
+              }}
+            >
+              <Input
+                label="Required Email"
+                type="email"
+                placeholder="your@email.com"
+                value={requiredEmailValue}
+                onChange={(e) => setRequiredEmailValue(e.target.value)}
+                required
+                error="Email is required"
+                startIcon={
+                  <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207"
+                    />
+                  </svg>
+                }
+              />
+              <Input
+                label="Password"
+                type="password"
+                placeholder="Password..."
+                required
+                value={validationPasswordValue}
+                onChange={(e) => setValidationPasswordValue(e.target.value)}
+                error="Password must be at least 8 characters"
+                maxLength={50}
+                showCharacterCount
+              />
+              <Input
+                label="Promo Code"
+                placeholder="SAVE20"
+                value={promoCodeValue}
+                onChange={(e) => setPromoCodeValue(e.target.value)}
+                error="Invalid promo code"
+                endButton
+                endButtonTitle="Apply"
+              />
+            </div>
+          </div>
+
+          {/* Input Sizes */}
+          <div style={{ marginTop: '2rem' }}>
+            <h4>Input Sizes</h4>
+            <div
+              style={{
+                display: 'grid',
+                gap: '1.5rem',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
+                marginTop: '1rem',
+              }}
+            >
+              <Input
+                label="Small Input"
+                placeholder="Small size..."
+                size="sm"
+              />
+              <Input
+                label="Medium Input"
+                placeholder="Medium size..."
+                size="md"
+              />
+              <Input
+                label="Large Input"
+                placeholder="Large size..."
+                size="lg"
+              />
+            </div>
+          </div>
+
+          {/* Input States */}
+          <div style={{ marginTop: '2rem' }}>
+            <h4>Input States</h4>
+            <div
+              style={{
+                display: 'grid',
+                gap: '1.5rem',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+                marginTop: '1rem',
+              }}
+            >
+              <Input
+                label="Required Field"
+                placeholder="This field is required..."
+                required
+                helperText="This field is required"
+              />
+              <Input
+                label="Error State"
+                placeholder="Invalid input..."
+                error="This field has an error"
+                defaultValue="invalid@"
+              />
+              <Input
+                label="Disabled Input"
+                placeholder="Disabled input..."
+                disabled
+                helperText="This input is disabled"
+              />
+            </div>
+          </div>
+
+          {/* Input Types */}
+          <div style={{ marginTop: '2rem' }}>
+            <h4>Input Types</h4>
+            <div
+              style={{
+                display: 'grid',
+                gap: '1.5rem',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
+                marginTop: '1rem',
+              }}
+            >
+              <Input
+                label="Email"
+                type="email"
+                placeholder="your@email.com"
+                helperText="Enter a valid email address"
+              />
+              <Input
+                label="Password"
+                type="password"
+                placeholder="••••••••"
+                helperText="Enter your password"
+              />
+              <Input
+                label="Number"
+                type="number"
+                placeholder="123"
+                helperText="Enter a number"
+              />
+              <Input
+                label="Search"
+                type="search"
+                placeholder="Search..."
+                helperText="Search for something"
+              />
+              <Input
+                label="Search with HTTPS"
+                type="search"
+                placeholder="Search..."
+                value={httpsSearchValue}
+                onChange={(e) => setHttpsSearchValue(e.target.value)}
+                startText="https://"
+                helperText="Search with HTTPS prefix"
+              />
+            </div>
+          </div>
+
+          {/* Full Width Example */}
+          <div style={{ marginTop: '2rem' }}>
+            <h4>Full Width Input</h4>
+            <div style={{ marginTop: '1rem' }}>
+              <Input
+                label="Full Width Message"
+                placeholder="This input takes the full width of its container..."
+                value=""
+                onChange={() => {}}
+                fullWidth
+                helperText="This input spans the full width"
+              />
             </div>
           </div>
         </div>
