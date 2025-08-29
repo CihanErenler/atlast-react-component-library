@@ -1,0 +1,218 @@
+@use '../../styles' as *;
+@use '../../styles/mixins' as *;
+
+.card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-primary);
+  transition:
+    box-shadow var(--transition-fast),
+    transform var(--transition-fast),
+    border-color var(--transition-fast);
+
+  // Base border radius
+  border-radius: var(--radius-md);
+
+  // Ensure proper text color inheritance
+  color: var(--text-primary);
+
+  // Reset default styles for when used as a button-like element
+  &.clickable {
+    cursor: pointer;
+    user-select: none;
+
+    &:focus-visible {
+      outline: 2px solid var(--border-focus);
+      outline-offset: 2px;
+    }
+  }
+}
+
+// Variant styles
+.variant-elevated {
+  box-shadow: var(--shadow-sm);
+  border-color: transparent;
+
+  &.hoverable:hover,
+  &.clickable:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-1px);
+  }
+
+  &.clickable:active {
+    transform: translateY(0);
+    box-shadow: var(--shadow-sm);
+  }
+}
+
+.variant-outlined {
+  box-shadow: none;
+  border-color: var(--border-primary);
+
+  &.hoverable:hover,
+  &.clickable:hover {
+    border-color: var(--border-hover);
+    // box-shadow: var(--shadow-sm);
+  }
+
+  &.clickable:active {
+    border-color: var(--border-active);
+    box-shadow: none;
+  }
+}
+
+.variant-filled {
+  background-color: var(--bg-tertiary);
+  border-color: transparent;
+  box-shadow: none;
+
+  &.hoverable:hover,
+  &.clickable:hover {
+    background-color: var(--bg-hover);
+    box-shadow: var(--shadow-sm);
+  }
+
+  &.clickable:active {
+    background-color: var(--bg-active);
+    box-shadow: none;
+  }
+}
+
+// Padding variants
+.padding-none {
+  padding: 0;
+}
+
+.padding-sm {
+  padding: var(--spacing-3);
+}
+
+.padding-md {
+  padding: var(--spacing-4);
+}
+
+.padding-lg {
+  padding: var(--spacing-6);
+}
+
+// Border radius variants
+.radius-none {
+  border-radius: 0;
+}
+
+.radius-sm {
+  border-radius: var(--radius-sm);
+}
+
+.radius-md {
+  border-radius: var(--radius-md);
+}
+
+.radius-lg {
+  border-radius: var(--radius-lg);
+}
+
+// Structured card layout (with title/footer)
+.structured {
+  padding: 0;
+  overflow: hidden;
+}
+
+.header {
+  padding: var(--spacing-4) var(--spacing-4) 0 var(--spacing-4);
+  box-shadow: none;
+}
+
+.title {
+  margin: 0;
+  font-size: 1.125rem;
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-primary);
+  line-height: 1.4;
+  box-shadow: none;
+}
+
+.titleContainer {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  box-shadow: none;
+}
+
+.body {
+  flex: 1;
+
+  // When no header/footer, apply top/bottom padding
+  .card:not(.structured) & {
+    padding: var(--spacing-4);
+  }
+
+  // When structured, only apply horizontal padding by default
+  .structured & {
+    padding: var(--spacing-4);
+  }
+
+  // Remove top padding if there's a header
+  .header + & {
+    padding-top: var(--spacing-4);
+  }
+
+  // Remove bottom padding if there's a footer
+  &:has(+ .footer) {
+    padding-bottom: 0;
+  }
+}
+
+.footer {
+  padding: var(--spacing-4);
+
+  // Footer styling
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+// Structured card padding overrides
+.structured {
+  &.padding-sm {
+    .header {
+      padding: var(--spacing-3) var(--spacing-3) 0 var(--spacing-3);
+    }
+
+    .body {
+      padding: var(--spacing-3);
+
+      .header + & {
+        padding-top: var(--spacing-3);
+      }
+    }
+
+    .footer {
+      padding: 0 var(--spacing-3) var(--spacing-3) var(--spacing-3);
+    }
+  }
+
+  &.padding-lg {
+    .header {
+      padding: var(--spacing-6) var(--spacing-6) 0 var(--spacing-6);
+    }
+
+    .body {
+      padding: var(--spacing-6);
+
+      .header + & {
+        padding-top: var(--spacing-6);
+      }
+    }
+
+    .footer {
+      padding: 0 var(--spacing-6) var(--spacing-6) var(--spacing-6);
+    }
+  }
+
+  &.padding-none {
+    .header,
+    .body,
+    .footer {
+      padding: 0;
+    }
+  }
+}
