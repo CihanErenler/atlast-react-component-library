@@ -1,0 +1,36 @@
+@use '../../styles' as *;
+
+.themeToggle {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  min-width: auto;
+  padding: 0;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+.themeSwitcher {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.themeSelect {
+  display: flex;
+  background-color: var(--bg-secondary);
+  border-radius: 8px;
+  padding: 4px;
+  gap: 4px;
+}
+
+.themeOption {
+  min-width: auto;
+  padding: 8px 12px;
+
+  &:hover {
+    transform: none; // Override any global hover effects
+  }
+}

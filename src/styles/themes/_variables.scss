@@ -1,0 +1,115 @@
+// Import your existing color variables
+@import '../colors'; // Your existing color file
+
+:root {
+  // Primary colors
+  --color-primary: #{$primary-color};
+  --color-primary-hover: #{$primary-hover-color};
+  --color-secondary: #{$secondary-color};
+
+  // Text colors
+  --text-primary: #{$primary-text-color};
+  --text-secondary: #{$secondary-text-color};
+
+  // Background colors
+  --bg-primary: #{$white};
+  --bg-secondary: #{$gray-1};
+  --bg-tertiary: #{$gray-2};
+  --bg-input: #{$white};
+
+  // Border colors
+  --border-primary: #{$stroke-color};
+  --border-secondary: #{$gray-4};
+
+  // Status colors
+  --color-success: #{$green};
+  --color-success-dark: #{$green-dark};
+  --color-success-light: #{$green-light-8};
+  --color-success-light-hover: #{$green-light-6};
+
+  --color-danger: #{$red};
+  --color-danger-dark: #{$red-dark};
+  --color-danger-light: #{$red-light-5};
+  --color-danger-light-hover: #{$red-light-4};
+
+  --color-warning: #{$yellow};
+  --color-info: #{$blue};
+  --color-info-dark: #{$blue-dark};
+  --color-info-light: #{$blue-light-5};
+  --color-info-light-hover: #{$blue-light-4};
+
+  // Gray scale
+  --color-gray-1: #{$gray-1};
+  --color-gray-2: #{$gray-2};
+  --color-gray-3: #{$gray-3};
+  --color-gray-4: #{$gray-4};
+  --color-gray-5: #{$gray-5};
+
+  // Dark scale (for secondary colors in light mode)
+  --color-dark-1: #{$dark-1};
+  --color-dark-2: #{$dark-2};
+  --color-dark-3: #{$dark-3};
+  --color-dark-4: #{$dark-4};
+  --color-dark-5: #{$dark-5};
+  --color-dark-6: #{$dark-6};
+  --color-dark-7: #{$dark-7};
+  --color-dark-8: #{$dark-8};
+
+  // White
+  --color-white: #{$white};
+}
+
+// Dark theme
+[data-theme='dark'] {
+  // Keep primary colors vibrant
+  --color-primary: #{$primary-color};
+  --color-primary-hover: #{$primary-hover-color};
+  --color-secondary: #{$secondary-color};
+
+  // Flip text colors - use light colors for text
+  --text-primary: #{$dark-7};
+  --text-secondary: #{$dark-6};
+
+  // Use dark colors for backgrounds
+  --bg-primary: #{$dark-1};
+  --bg-secondary: #{$dark-2};
+  --bg-tertiary: #{$dark-3};
+  --bg-input: #{$dark-2};
+
+  // Use medium dark colors for borders
+  --border-primary: #{$dark-4};
+  --border-secondary: #{$dark-5};
+
+  // Status colors adjustments for dark theme
+  --color-success: #{$green};
+  --color-success-dark: #{$green-dark};
+  --color-success-light: #{$dark-3}; // Use dark background instead
+  --color-success-light-hover: #{$dark-4};
+
+  --color-danger: #{$red};
+  --color-danger-dark: #{$red-dark};
+  --color-danger-light: #{$dark-3};
+  --color-danger-light-hover: #{$dark-4};
+
+  --color-info: #{$blue};
+  --color-info-dark: #{$blue-dark};
+  --color-info-light: #{$dark-3};
+  --color-info-light-hover: #{$dark-4};
+
+  // Reverse gray scale for dark theme
+  --color-gray-1: #{$dark-3};
+  --color-gray-2: #{$dark-4};
+  --color-gray-3: #{$dark-5};
+  --color-gray-4: #{$dark-6};
+  --color-gray-5: #{$dark-7};
+
+  // Use lighter shades for secondary elements
+  --color-dark-1: #{$dark-7};
+  --color-dark-2: #{$dark-6};
+  --color-dark-3: #{$dark-5};
+  --color-dark-4: #{$dark-4};
+  --color-dark-5: #{$dark-3};
+
+  // White becomes the darkest
+  --color-white: #{$white};
+}

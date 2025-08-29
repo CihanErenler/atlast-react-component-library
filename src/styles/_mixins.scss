@@ -4,3 +4,42 @@
   -ms-user-select: none; /* IE10+/Edge */
   user-select: none; /* Standard */
 }
+// Basic theme mixins (these are working fine)
+@mixin theme-color($property, $color-name) {
+  #{$property}: var(--color-#{$color-name});
+}
+
+@mixin theme-bg($color-name) {
+  background-color: var(--bg-#{$color-name});
+}
+
+@mixin theme-text($color-name) {
+  color: var(--text-#{$color-name});
+}
+
+@mixin theme-border($color-name) {
+  border-color: var(--border-#{$color-name});
+}
+
+// Fixed responsive theme mixin - using @content instead of parameters
+@mixin light-theme {
+  // Default styles (light theme)
+  @content;
+}
+
+@mixin dark-theme {
+  [data-theme='dark'] & {
+    @content;
+  }
+}
+
+// Alternative approach - combined mixin
+@mixin theme-variants {
+  // Light theme styles
+  @content;
+
+  // Dark theme styles
+  [data-theme='dark'] & {
+    @content;
+  }
+}

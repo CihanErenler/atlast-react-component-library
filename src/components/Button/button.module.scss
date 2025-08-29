@@ -2,8 +2,11 @@
 @use '../../styles/mixins' as *;
 
 .button {
-  background-color: none;
-  transition: background-color 0.3s ease;
+  background-color: transparent; // Fixed: was 'none'
+  transition:
+    background-color 0.3s ease,
+    border-color 0.3s ease,
+    color 0.3s ease;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -11,6 +14,7 @@
   border: 1px solid transparent;
   @include prevent-text-selection;
 
+  // Sizes
   &.size-xs {
     height: 28px;
     padding: 10px 18px;
@@ -22,7 +26,7 @@
     height: 33px;
     padding: 10px 18px;
     min-width: 120px;
-    font-size: 14x;
+    font-size: 14px; // Fixed: was '14x'
   }
 
   &.size-md {
@@ -46,164 +50,163 @@
     font-size: 18px;
   }
 
-  // Primary
+  // Enabled state styles
   &:not(.disabled) {
+    // Solid variants
     &.solid {
       &.color-primary {
-        background-color: $primary-color;
-        color: $white;
-        border-color: $primary-color;
+        background-color: var(--color-primary);
+        color: var(--color-white);
+        border-color: var(--color-primary);
 
         &:hover {
-          background-color: $blue-dark;
+          background-color: var(--color-primary-hover);
         }
       }
 
       &.color-secondary {
-        background-color: $dark-1;
-        color: $white;
-        border-color: $dark-1;
+        background-color: var(--color-dark-1);
+        color: var(--color-white);
+        border-color: var(--color-dark-1);
 
         &:hover {
-          background-color: $dark-2;
+          background-color: var(--color-dark-2);
         }
       }
 
       &.color-success {
-        background-color: $green;
-        color: $white;
-        border-color: $green;
+        background-color: var(--color-success);
+        color: var(--color-white);
+        border-color: var(--color-success);
 
         &:hover {
-          background-color: $green-dark;
+          background-color: var(--color-success-dark);
         }
       }
 
       &.color-danger {
-        background-color: $red;
-        color: $white;
-        border-color: $red;
+        background-color: var(--color-danger);
+        color: var(--color-white);
+        border-color: var(--color-danger);
 
         &:hover {
-          background-color: $red-dark;
+          background-color: var(--color-danger-dark);
         }
       }
     }
 
-    // Outline styles
+    // Outline variants
     &.outline {
       &.color-primary {
-        background-color: $white;
-        border-color: $primary-color;
-        color: $primary-color;
+        background-color: var(--bg-primary);
+        border-color: var(--color-primary);
+        color: var(--color-primary);
 
         &:hover {
-          background-color: $blue-light-5;
+          background-color: var(--color-info-light);
         }
 
         &:active {
-          background-color: $blue-light-4;
+          background-color: var(--color-info-light-hover);
         }
       }
 
       &.color-danger {
-        background-color: $white;
-        border-color: $red;
-        color: $red;
+        background-color: var(--bg-primary);
+        border-color: var(--color-danger);
+        color: var(--color-danger);
 
         &:hover {
-          background-color: $red-light-5;
+          background-color: var(--color-danger-light);
         }
 
         &:active {
-          background-color: $red-light-4;
+          background-color: var(--color-danger-light-hover);
         }
       }
 
       &.color-secondary {
-        background-color: $white;
-        border-color: $dark-1;
-        color: $dark-1;
+        background-color: var(--bg-primary);
+        border-color: var(--color-dark-1);
+        color: var(--color-dark-1);
 
         &:hover {
-          background-color: $gray-2;
+          background-color: var(--color-gray-2);
         }
 
         &:active {
-          background-color: $gray-3;
+          background-color: var(--color-gray-3);
         }
       }
 
       &.color-success {
-        background-color: $white;
-        border-color: $secondary-color;
-        color: $secondary-color;
+        background-color: var(--bg-primary);
+        border-color: var(--color-secondary);
+        color: var(--color-secondary);
 
         &:hover {
-          background-color: $green-light-8;
+          background-color: var(--color-success-light);
         }
 
         &:active {
-          background-color: $green-light-6;
+          background-color: var(--color-success-light-hover);
         }
       }
     }
 
-    // Ghost styles
+    // Ghost variants
     &.ghost {
       &.color-primary {
         background-color: transparent;
-        color: $primary-color;
+        color: var(--color-primary);
 
         &:hover {
-          background-color: $gray-2;
-          color: $primary-text-color;
+          background-color: var(--color-gray-2);
+          color: var(--text-primary);
         }
 
         &:active {
-          background-color: $blue-light-5;
-          color: $primary-color;
+          background-color: var(--color-info-light);
+          color: var(--color-primary);
         }
       }
 
       &.color-secondary {
         background-color: transparent;
-        color: $dark-1;
+        color: var(--color-dark-1);
 
         &:hover {
-          background-color: $gray-2;
-          color: $dark-1;
+          background-color: var(--color-gray-2);
         }
 
         &:active {
-          background-color: $gray-3;
-          color: $dark-1;
+          background-color: var(--color-gray-3);
         }
       }
 
       &.color-success {
         background-color: transparent;
-        color: $secondary-color;
+        color: var(--color-secondary);
 
         &:hover {
-          background-color: $green-light-8;
+          background-color: var(--color-success-light);
         }
 
         &:active {
-          background-color: $green-light-6;
+          background-color: var(--color-success-light-hover);
         }
       }
 
       &.color-danger {
         background-color: transparent;
-        color: $red;
+        color: var(--color-danger);
 
         &:hover {
-          background-color: $red-light-5;
+          background-color: var(--color-danger-light);
         }
 
         &:active {
-          background-color: $red-light-4;
+          background-color: var(--color-danger-light-hover);
         }
       }
     }
@@ -211,10 +214,9 @@
 
   // Disabled styles
   &.disabled {
-    background-color: $gray-3;
-    border-color: $gray-3;
-
-    color: $dark-5;
+    background-color: var(--color-gray-3);
+    border-color: var(--color-gray-3);
+    color: var(--color-dark-5);
     cursor: not-allowed;
   }
 
