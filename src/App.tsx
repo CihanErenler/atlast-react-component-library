@@ -5,6 +5,13 @@ import Input from './components/Input/Input';
 import Card from './components/Card/Card';
 import Text from './components/Text/Text';
 import { useTheme } from './hooks/useTheme';
+import {
+  Dropdown,
+  DropdownItem,
+  DropdownTrigger,
+  DropdownItemList,
+  DropdownDivider,
+} from './components';
 
 function App() {
   const { theme } = useTheme(); // You can access theme anywhere in your app
@@ -47,6 +54,34 @@ function App() {
         >
           <h1>My App</h1>
 
+          <Dropdown placement="bottomLeft">
+            <DropdownTrigger>
+              <Button title="Menu" />
+            </DropdownTrigger>
+            <DropdownItemList>
+              <DropdownItem
+                label="Edit"
+                shortcut="⌘E"
+                onClick={() => console.log('Edit clicked')}
+              />
+              <DropdownItem
+                label="Duplicate"
+                shortcut="⌘D"
+                onClick={() => console.log('Duplicate clicked')}
+              />
+              <DropdownDivider />
+              <DropdownItem
+                label="Archive"
+                onClick={() => console.log('Archive clicked')}
+              />
+              <DropdownItem
+                label="Delete"
+                disabled={true}
+                onClick={() => console.log('Delete clicked')}
+              />
+            </DropdownItemList>
+          </Dropdown>
+
           <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
             {/* Choose your preferred theme switcher */}
             <ThemeToggle />
@@ -59,6 +94,24 @@ function App() {
           </div>
         </div>
       </header>
+
+      {/* Dropdown Hover Demo Section */}
+      <section
+        style={{
+          margin: '2rem 0',
+          padding: '2rem',
+          background: '#f8fafc',
+          borderRadius: '8px',
+        }}
+      >
+        <h2 style={{ marginBottom: '1rem', color: '#1f2937' }}>
+          Dropdown Hover Demo
+        </h2>
+        <p style={{ marginBottom: '1.5rem', color: '#6b7280' }}>
+          Test the improved hover experience with gap-filling and delayed
+          hiding:
+        </p>
+      </section>
 
       {/* Main content */}
       <main style={{ padding: '2rem' }}>
